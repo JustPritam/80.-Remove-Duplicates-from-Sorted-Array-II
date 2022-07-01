@@ -1,0 +1,16 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int n = nums.length;
+        if( n < 3 )
+            return n;
+        int f = 2, s = 2;
+        while( f < n ){
+            if(nums[f]!=nums[s-2])
+                nums[s++]=nums[f]; /*here 1st nums[s] = nums[f] takes place then s++ takes place */
+            f++;
+        }
+        return s;
+    }
+}
+
+/* In this, every element is checked with its previous 3rd element. If same then s is not incremented but f is incremented. */ 
